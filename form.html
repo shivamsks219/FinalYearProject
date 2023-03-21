@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/style.css"/>
+    <title>WebApp</title>
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container1">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">SentiApp</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">Resume</a></li>
+          </ul>
+          <button class="btn btn-danger navbar-btn">Button</button>
+        </div>
+      </nav>
+    <h1>Form</h1>
+    <p>This is a Sentiment Analyser Web App using Django </p>
+    <div class ="container-fluid">
+    <div class ="form-group">
+        <form action= "" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label>First Name</label><br>
+            <input type = "text" class="form-control" id = "fname" name="fname"><br>
+            <label>Last Name</label><br>
+            <input type = "text" class="form-control" id = "lname" name="lname"><br>
+            <label>Comments </label><br>
+            <input type = "text" class="form-control" id = "comment" name="comment"><br>
+            <!-- <input type = "text" class="form-control" id = "comment" name="comment"><br> -->
+            <!-- <br><button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button> -->
+            <br>
+            <br>
+            <input type="file" class="form-control" id="image" name="image">
+            <!-- <input type="submit"> -->
+            
+            <br><button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
+            <br>
+            <input type="text" value="{{Fullname}}" class="form-control">
+            <br>
+            <input type="text" value="{{Sentiment}}" class="form-control">
+            <br>
+            <input type="text" value="{{imgSentiment}}" class="form-control">
+            <br>
+            
+        </form>
+        <form action= "/firstpro/sentiApp/views.py" method="post" enctype="multipart/form-data">
+            <br><br>File Upload <input type = "file" name="filename" />
+            <p> <input type = "submit" value = "Upload Now" /></p>
+        </form>
+        
+    </div>
+</div>
+    
+</body>
+</html>
